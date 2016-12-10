@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Hello World --&gt;千古不变的helloworld-_- | 2哈的生活</title>
+  <title>顶部轮播图 | 2哈的生活</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -236,39 +236,73 @@ show_date_time();
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2016-12-07T02:24:06.798Z" itemprop="datePublished">
-          2016-12-07
+      <time datetime="2016-12-10T09:30:42.000Z" itemprop="datePublished">
+          2016-12-10
       </time>
     
+    
+    | 
+    <a href='/tags/android/'>android</a>
+    
+    
 </span>
-                <h1>Hello World -->千古不变的helloworld-_-</h1>
+                <h1>顶部轮播图</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+      		<hr>
+<p>title: 顶部轮播图<br>date: 2016-12-10 17:30:42<br>tags: [android]</p>
+<h2 id="categories-开发中遇到的问题"><a href="#categories-开发中遇到的问题" class="headerlink" title="categories: 开发中遇到的问题"></a>categories: 开发中遇到的问题</h2><blockquote>
+<p>页面顶部轮播图</p>
+<blockquote>
+<p>使用ViewFlipper</p>
+<hr>
+<p><img src="http://img.blog.csdn.net/20140928205342079" alt=""></p>
+<ol>
+<li>xml代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;RelativeLayout</div><div class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  </div><div class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;  </div><div class="line">    android:layout_width=&quot;match_parent&quot;  </div><div class="line">    android:layout_height=&quot;match_parent&quot; &gt;  </div><div class="line">&lt;ViewFlipper</div><div class="line">    android:id=&quot;@+id/view&quot;</div><div class="line">    android:width=&quot;match_parent&quot;</div><div class="line">    android:height=&quot;wrap_content&quot;</div><div class="line">    android:layout_alignParentTop=&quot;true&quot;</div><div class="line">    android:flipInterval=&quot;2000&quot;</div><div class="line">    &gt;</div><div class="line">    &lt;ImageView</div><div class="line">        android:width=&quot;fill_parent&quot;</div><div class="line">        android:height=&quot;300dp&quot;</div><div class="line">        android:scaleType=&quot;fitXY&quot;</div><div class="line">        android:src=&quot;&quot;/&gt;</div><div class="line">          &lt;ImageView</div><div class="line">        android:width=&quot;fill_parent&quot;</div><div class="line">        android:height=&quot;300dp&quot;</div><div class="line">        android:scaleType=&quot;fitXY&quot;</div><div class="line">        android:src=&quot;&quot;/&gt;</div><div class="line">          &lt;ImageView</div><div class="line">        android:width=&quot;fill_parent&quot;</div><div class="line">        android:height=&quot;300dp&quot;</div><div class="line">        android:scaleType=&quot;fitXY&quot;</div><div class="line">        android:src=&quot;&quot;/&gt;</div><div class="line">    </div><div class="line">&lt;/ViewFilpper&gt;</div><div class="line">&lt;/RelativeLayout&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<p>android:flipInterval=”2000” 持续时间，多长时间变换图片</p>
+<ol>
+<li><p>java代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">flipper=(ViewFlipper)findViewById(R.id.view);找见id</div><div class="line">flipper.startFlipping();启动</div></pre></td></tr></table></figure>
+</li>
+<li><p>实现手势滑动<br>flipper.showNext();显示下一张图片<br>flipper.showPrevious();显示上一张图片</p>
+<blockquote>
+<p>使用库实现 ，我喜欢</p>
+<blockquote>
+<p>com.daimajia.slider:library:1.1.5</p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+<hr>
+<p>可以使用数组保存，然后依次赋给List<imageview>,List<imageview>再赋给addView中，</imageview></imageview></p>
+<ol>
+<li><p>xml代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;com.daimajia.slider:library:1.1.5</div><div class="line">    android:id=&quot;@+id/slider&quot;</div><div class="line">    android:width=&quot;match_parent&quot;</div><div class="line">    android:height=&quot;180dp&quot;</div><div class="line">    app:auto_cycle=&quot;true&quot;</div><div class="line">    app:indicator_visibility=&quot;visible&quot;</div><div class="line">    app:pager_animation=&quot;Accordion&quot;</div><div class="line">    app:pager_animation_span=&quot;1100&quot;/&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>java代码： </p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">for (int image:images)&#123;</div><div class="line">      TextSliderView textSliderView=new TextSliderView(getActivity());</div><div class="line">      textSliderView.image(images[1]);</div><div class="line">      textSliderView.setScaleType(BaseSliderView.ScaleType.Fit);</div><div class="line">mySliderLayout.addSlider(textSliderView);</div><div class="line"></div><div class="line">   &#125;</div><div class="line">mySliderLayout.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);</div><div class="line">mySliderLayout.setCustomAnimation(new DescriptionAnimation());</div><div class="line">mySliderLayout.setPresetTransformer(SliderLayout.Transformer.FlipHorizontal);</div><div class="line">mySliderLayout.setDuration(3000);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2016/12/07/2ha4/" style="float: left;">
-        ← 测试
-    </a>
     
+    <a class="pull-right" href="/2016/12/10/2ha3/">
+        Hexo主题修改 →
+    </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/12/07/2ha/" data-title="Hello World --&gt;千古不变的helloworld-_-" data-url="http://yoursite.com/2016/12/07/2ha/"></div>
+<div class="ds-thread" data-thread-key="2016/12/10/kaifa/" data-title="顶部轮播图" data-url="http://yoursite.com/2016/12/10/kaifa/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"duoshuo_name"};
 (function() {
