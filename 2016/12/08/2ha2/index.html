@@ -17,14 +17,14 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: 别忘记加空格 | 2哈的生活</title>
+  <title>笔记1 | 2哈的生活</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="2哈的生活">
     <meta name="author" content="王鹏程">
-    <meta name="description" content="2哈无人能比，啦啦啦" />
+    <meta name="description" content="2哈的人生，谁懂！！" />
     <meta name="keywords" content="" />
 
     <!-- Favicon, (keep icon in root folder) -->
@@ -44,15 +44,15 @@
     <![endif]-->
 
     <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
-    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 
     <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
     <!--[if IE]>
-    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
     <![endif]-->
 
     <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
@@ -84,7 +84,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -96,12 +96,12 @@
         </div>
         <!-- Lists in Slidebars -->
         <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <li><a href="/" class="animsition-link" title="Home">主页</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">存档</a></li>
             <!-- Dropdown Menu -->
 			 
             <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <a class="sb-toggle-submenu">工作区<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
                         <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
@@ -113,9 +113,11 @@
             
             
         	<li>
-        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+        		<a class="sb-toggle-submenu">类别<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
+				    <li><a href="/categories/学习/" class="animsition-link">学习<small>(1)</small></a></li>
+				    
 				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(1)</small></a></li>
 				    
 				</ul>
@@ -128,7 +130,7 @@
                     
                     <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
                     
-                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    <li><a href="http://wang2ha.cf/" class="animsition-link">2哈</a></li>
                     
                 </ul>
             </li>
@@ -164,7 +166,7 @@
                     <nav>
                         <ul class="nav">
                             <li><a href="/" class="animsition-link">2哈的生活</a></li>
-                            <li class="nolink"><span>Always </span>Creative.</li>
+                            <li class="nolink"><span>祝大家 </span>圣诞节快乐!</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
                             
@@ -180,13 +182,17 @@
                             
                             <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
                             
-                            <li class="nolink"><span>Welcome!</span></li>
+                            <li class="nolink"><span>Welcome!!</span></li>
+							圣诞节12月25：<SPAN id=span_dt_dt></SPAN> 
                         </ul>
                     </nav>
                     <!--// Info-bar -->
+					
+					
+					
                 </div>
                 <!-- // .container -->
-                <div class="learnmore sb-toggle-right">More</div>
+                <div class="learnmore sb-toggle-right">点我</div>
                 <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar before"></span>
@@ -196,73 +202,100 @@
             </div>
             <!-- // .navbar-inner -->
         </div>
-
+<SCRIPT language=javascript> 
+<!-- 
+//document.write(""); 
+function show_date_time(){ 
+window.setTimeout("show_date_time()", 1000); 
+BirthDay=new Date("12/25/2016 00:00:00");//这个日期是可以修改的 
+today=new Date(); 
+timeold=(BirthDay.getTime()-today.getTime()); 
+sectimeold=timeold/1000 
+secondsold=Math.floor(sectimeold); 
+msPerDay=24*60*60*1000 
+e_daysold=timeold/msPerDay 
+daysold=Math.floor(e_daysold); 
+e_hrsold=(e_daysold-daysold)*24; 
+hrsold=Math.floor(e_hrsold); 
+e_minsold=(e_hrsold-hrsold)*60; 
+minsold=Math.floor((e_hrsold-hrsold)*60); 
+seconds=Math.floor((e_minsold-minsold)*60); 
+span_dt_dt.innerHTML="<align=center><p><font color=#A22900><p><font size=5>距离圣诞节剩余："+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒"+"<br></font><br></font>" ; //这里你自己改。就是倒计时的样式，字体大小size=4 颜色是color
+} 
+show_date_time(); 
+//--> 
+</SCRIPT>
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/12/07/王鹏程/">王鹏程</a></h4>
-                            
-                            <p><time datetime="2016-12-07T09:48:22.000Z"><a href="/2016/12/07/王鹏程/">2016-12-07</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-12-08T07:15:03.000Z" itemprop="datePublished">
+          2016-12-08
+      </time>
+    
+    
+    | 
+    <a href='/tags/写作/'>写作</a>
+    
+    
+</span>
+                <h1>笔记1</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<blockquote>
+<p>12月8号是一个悲催的日子</p>
+<blockquote>
+<p>该交房租了，哇哇哇哭</p>
+<hr>
+<h2 id="此处应该有表情"><a href="#此处应该有表情" class="headerlink" title="此处应该有表情.."></a>此处应该有表情..</h2><p><img src="http://ohuv9cuqr.bkt.clouddn.com/ha.png" alt="七牛"><br>但是我今天，把我的博客搭建完成了。哈哈哈，房租那都不是个事。。。<br>上午的时候，我把昨天搭建的博客，有看了下，看看有什么问题啥的。<br>就差最后一步就是申请域名。哼，哼，可是2哈没钱啊，有钱也买骨头了<br>呢咋办呢，终于有好人告诉我了个网址，网址就是—-然后我就默默的去申请了域名。<br>然后有了自己的小网址，好激动啊。<br>就这么把域名弄到手了，然后把域名配置了DNS ip，<br>然后就开始了我的博客完善工作，弄了个简洁的主题。测试也木任何问题了。<br>使用命令符<br> 配置，搭建，测试，提交一系列<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate搭建，配置</div></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">hexo server -debug</div><div class="line">这里可以看到自己那些个错误</div><div class="line">也可以使用</div><div class="line">hexo server</div><div class="line">hexo s</div><div class="line">都行</div></pre></td></tr></table></figure>
+<p>这样，自己本地就搭建起一个服务器了，输入网址localhost:4000就可以测试了。</p>
+<p>如何写博客文章。先不说你文采怎么样，会写，会使用才最重要。<br>下一篇我会介绍如何使用markdown语法。<br>然后我又将图片存到了七牛，哈哈。妈妈再也不用担心我的图片没有网址了。<br>其实大家可以百度下，github博客与七牛服务器的搭建，前边已经说了2哈已经没钱再给七牛了，所以，只能让你们自己去试试了。</p>
+<p><img src="http://img.zwbk.org/baike/bpic/2012/09/25/20120925134451260_9794.jpg" alt="新闻联播"></p>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/12/10/2ha3/" style="float: left;">
+        ← Hexo主题修改
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/12/07/2ha1/">
+        王鹏程 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/12/08/2ha2/" data-title="笔记1" data-url="http://yoursite.com/2016/12/08/2ha2/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
