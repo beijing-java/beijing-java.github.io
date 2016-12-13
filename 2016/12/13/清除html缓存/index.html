@@ -257,27 +257,19 @@ show_date_time();
 </blockquote>
 <p>前因：<br>近日来，2哈跟着大神开始学习php，也用php写了些例子，一直发现个问题，页面缓存太严重，<br>在服务器端修改完代码之后，不能立即看到效果。肯定是缓存的问题。<br>还有表单输入后的数据，在下一次输入相同数据时还是会显示的。</p>
 <p>法海解决：<br>2哈无奈，只能请来了法海。法海唱到：西湖的美，你的美，为啥缓存总是存在，啊，啊，啊，啊。<br>千年不变啊。。<br><img src="https://s-media-cache-ak0.pinimg.com/236x/ac/bd/c1/acbdc19c61c86f4c712adcee7e3f382d.jpg" alt=""><br>法海说：你可以使用html设置http头信息标签，这是种简单的解决办法</p>
-<ol>
-<li><img src="http://ohuv9cuqr.bkt.clouddn.com/biaoji.png" alt="">用html标签设置http头信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-cache&quot;&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Expires&quot; content=&quot;0&quot;&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>1 <img src="http://ohuv9cuqr.bkt.clouddn.com/biaoji.png" alt="">用html标签设置http头信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-cache&quot;&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Expires&quot; content=&quot;0&quot;&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
 </li>
-</ol>
+</ul>
 <p>http头信息<em>Expires</em>和<em>Cache-Control</em>。为应用程序服务器提供了一个控制浏览器和代理服务器上缓存的机制。<br>Http头信息Expires告诉代理服务器，它的缓存页面何时将过期。Http规范中新定义的头信息Cache-Control可以通知浏览器不缓存任何页面。<br>当点击后退按钮时，浏览器重新访问服务器已获取页面，<br>  使用Cache-Control的基本方法：</p>
-<p>   #no-cache:强制缓存从服务器上获取新的页面</p>
-<pre><code>#no-store:在任何环境下魂村不保存任何页面
+<pre><code>#no-cache:强制缓存从服务器上获取新的页面
+#no-store:在任何环境下不保存任何页面
 </code></pre><p>而http1.0规范中Pragma:no-cache等同于Cache-Control:no-cache,同样可以包含在头信息中。</p>
-<ol>
-<li><img src="http://ohuv9cuqr.bkt.clouddn.com/biaoji.png" alt="">在需要打开的url后面添加一个随机的参数<br>增加参数前：url=test/test.jsp<br>增加参数后：url=test/test.jsp?ranparam=random()<br>因为每次请求的url后面的参数不一样，相当于请求的是不同的页面，这样虽然麻瓜点，但也是可以清除缓存的。</li>
-<li><p><img src="http://ohuv9cuqr.bkt.clouddn.com/biaoji.png" alt=""> php清除缓存文件<br>```<br>&lt;?php<br>header(“Content-type:text/html;charset=utf-8”);<br>function clearCache($dir){<br> $file=scandir($dir);<br> foreach($file as $v){</p>
-<pre><code>if($v==&apos;clear.php&apos;){continue;}
-if(@unlink($v)){
-    echo&quot;成功清除文件:&quot;.$v.&apos;&lt;br/&gt;&apos;;
-}else{
-    echo&quot;清除文件失败:&quot;.$v.&apos;&lt;br/&gt;&apos;;
-}
-</code></pre><p> }</p>
-<p>}<br>?&gt;</p>
+<ul>
+<li>2 <img src="http://ohuv9cuqr.bkt.clouddn.com/biaoji.png" alt="">在需要打开的url后面添加一个随机的参数<br>增加参数前：url=test/test.jsp<br>增加参数后：url=test/test.jsp?ranparam=random()<br>因为每次请求的url后面的参数不一样，相当于请求的是不同的页面，这样虽然麻瓜点，但也是可以清除缓存的。</li>
+<li>3 <img src="http://ohuv9cuqr.bkt.clouddn.com/biaoji.png" alt=""> php清除缓存文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"> header(&quot;Content-type:text/html;charset=utf-8&quot;);</div><div class="line"> function clearCache($dir)&#123;</div><div class="line">	$file=scandir($dir);</div><div class="line">	foreach($file as $v)&#123;</div><div class="line">		if($v==&apos;clear.php&apos;)&#123;continue;&#125;</div><div class="line">		if(@unlink($v))&#123;</div><div class="line">			echo&quot;成功清除文件:&quot;.$v.&apos;&lt;br/&gt;&apos;;</div><div class="line">		&#125;else&#123;</div><div class="line">			echo&quot;清除文件失败:&quot;.$v.&apos;&lt;br/&gt;&apos;;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line"> </div><div class="line"> &#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
 </li>
-</ol>
+</ul>
 <p>剩下的以后，我好好的总结，先回家了，2哈饿了。。</p>
 
             <div class="clearfix"></div>
