@@ -4,14 +4,7 @@
 <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
 <!--
-***************  *      *     *
-      8          *    *       *
-      8          *  *         *
-      8          **           *
-      8          *  *         *
-      8          *    *       *
-      8          *      *     *
-      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+2哈欢迎您
 -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <!--<![endif]-->
@@ -42,7 +35,13 @@
     <!--[if IE 8]>
     <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
     <![endif]-->
-
+	<!--我-->
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/dist/css/barrager.css" />
+	<link rel="stylesheet" type="text/css" href="/static/pick-a-color/css/pick-a-color-1.2.3.min.css" />
+	<link rel="stylesheet" type="text/css" href="/static/syntaxhighlighter/styles/shCoreDefault.css" />
+	<!--我end-->
     <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
     <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
@@ -65,7 +64,17 @@
     <script src="/js/html5shiv.min.js"></script>
     <script src="/js/respond.min.js"></script>
     <![endif]-->
-
+	<!--我的-->
+	<script type="text/javascript" src="/static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/tinycolor-0.9.15.min.js"></script>  
+    <script type="text/javascript" src="/dist/js/jquery.barrager.min.js"></script>
+    <script type="text/javascript" src="/static/syntaxhighlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="/static/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="/static/syntaxhighlighter/scripts/shBrushPhp.js"></script>
+    <script type="text/javascript" src="/static/pick-a-color/js/pick-a-color-1.2.3.min.js"></script>  
+	
+	<!--我的end-->
 
 
 
@@ -226,6 +235,9 @@ span_dt_dt.innerHTML="<align=center><p><font color=#A22900><p><font size=5>距�
 } 
 show_date_time(); 
 //--> 
+
+
+
 </SCRIPT>
         <!-- ============================ Header & Logo bar =========================== -->
 
@@ -258,7 +270,46 @@ show_date_time();
 <!-- Height spacing helper -->
 <div class="heightblock"></div>
 <!-- // End height spacing helper -->
+<SCRIPT language=javascript> 
+<!--我的-->
+var json = '[{"info" : "2哈好厉害啊", "img" : "static/img/yaseng.png","href":""},{"info" : "2哈好厉害啊", "img" : "static/img/cute.png","href":""},{"info" : "2哈好厉害啊", "img" : "static/img/cute.png","href":"","bottom":700},{"info" : "2哈好厉害啊", "img" : "static/img/heisenbery.png","href":"","bottom":720}]'; //模拟加载JSON字符串的过程
+// document.write(json);
+////使用eval_r()来执行字符串里的JS代码
+var box = JSON.parse(json); //解析JSON字符串，让他变成JavaScript代码
+// document.write(box);
 
+tanmu(box);
+
+    function tanmu(data){
+//每条弹幕发送间隔
+var looper_time=3*1000;
+var items=data;
+//弹幕总数
+var total=data.length;
+//是否首次执行
+var run_once=true;
+//弹幕索引
+var index=0;
+//先执行一次
+barrager();
+function  barrager(){
+  if(run_once){
+      //如果是首次执行,则设置一个定时器,并且把首次执行置为false
+      looper=setInterval(barrager,looper_time);                
+      run_once=false;
+  }
+  //发布一个弹幕
+  $('body').barrager(items[index]);
+  //索引自增
+  index++;
+  //所有弹幕发布完毕，清除计时器。
+  if(index == total){
+      clearInterval(looper);
+      return false;
+  }
+}
+}
+</SCRIPT> 
 <!-- ============================ END Hero Image =========================== -->
 <!-- ============================ Content =========================== -->
 
