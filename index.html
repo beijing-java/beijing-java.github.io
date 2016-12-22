@@ -125,11 +125,15 @@
         		<a class="sb-toggle-submenu">类别<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/学习/" class="animsition-link">学习<small>(1)</small></a></li>
+				    <li><a href="/categories/Android/" class="animsition-link">Android<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/开发中遇到的问题/" class="animsition-link">开发中遇到的问题<small>(2)</small></a></li>
+				    <li><a href="/categories/HTML/" class="animsition-link">HTML<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(1)</small></a></li>
+				    <li><a href="/categories/PHP/" class="animsition-link">PHP<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(2)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -245,7 +249,7 @@ show_date_time();
       <!-- ============================ Hero Image =========================== -->
 
 <section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.webp) no-repeat center center fixed;background-size: cover">
+    <div class="container-fluid element-img" style="background: url(/img/back.jpg) no-repeat center center fixed;background-size: cover">
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
                 <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
@@ -319,7 +323,43 @@ function  barrager(){
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2016/12/13/清除html缓存/">清除html缓存</a></h3>
+                    <h3><a href="/2016/12/15/php1/">php与mysql之间的勾当</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2016-12-15T07:15:03.000Z" itemprop="datePublished">
+          2016-12-15
+      </time>
+    
+    
+    | 
+    <a href='/tags/遇到的问题/'>遇到的问题</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        php执行sql语句出错
+出现的问题：1234567$sql=&quot;select * from table where user = &apos;&quot;.$user.&quot;&apos;&quot;;$query=mysqli_query($link,$sql);其实在这时$query已经为假了，但是不知道错在哪，感觉sql语句也没错啊。while($row=mysqli_fetch_array($query))&#12
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2016/12/15/php1/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2016/12/13/html1/">清除html缓存</a></h3>
                     <span>
                         <span class="post-meta">
       <time datetime="2016-12-13T09:44:28.000Z" itemprop="datePublished">
@@ -350,7 +390,7 @@ function  barrager(){
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2016/12/13/清除html缓存/">Read More...</a>
+                        <a href="/2016/12/13/html1/">Read More...</a>
                     </p>
                     
                 </div>
@@ -453,7 +493,7 @@ xml代码123456789101112131415161718192021222324252627282930&lt;RelativeLayout  
     
     
     | 
-    <a href='/tags/写作/'>写作</a>
+    <a href='/tags/hexo主题/'>hexo主题</a>
     
     
 </span>
@@ -462,9 +502,8 @@ xml代码123456789101112131415161718192021222324252627282930&lt;RelativeLayout  
                 <div class="col-md-8">
                     <p>
                       
-                        Hexo主题修改先来张自拍吧。好多人非要求我来张自拍。嗨嗨，好尴尬啊。。
-今天是我搭建博客的第三天，好开心啊。上午的时候正在工作的时候看见一个群里再讨论建立个人博客的，然后我就看了下，大概是说配置完成之后，点击github却无法与自己的域名对应，我原先跳过的那些坑中，其中记着在github个人仓库中配置CNAME文档，在CNAME中写入自己的网址1www.wang2ha.cf
-这样你就可以在浏览器中输入自己的网址，就可以跳转到githu
+                        &gt;&gt; Hexo主题修改先来张自拍吧。应邀好多人的要求，我就发张自拍吧。嗨嗨，好尴尬啊。。
+今天是我搭建博客的第三天，好开心啊。上午的时候正在工作的时候看见一个群里再讨论如何建立个人博客的，因为我正好建完，而且也踩了不少坑。所以我就帮忙看了下，大概是说配置完成之后，点击github却无法与自己的域名对应，我原先跳过的那些坑中，其中记着在github个人仓库中配置CNAME文档，在CNAME中写入自己的网址1www.wang2h
                       
                     </p>
                     
@@ -490,7 +529,7 @@ xml代码123456789101112131415161718192021222324252627282930&lt;RelativeLayout  
     
     
     | 
-    <a href='/tags/写作/'>写作</a>
+    <a href='/tags/小文采/'>小文采</a>
     
     
 </span>
@@ -500,11 +539,14 @@ xml代码123456789101112131415161718192021222324252627282930&lt;RelativeLayout  
                     <p>
                       
                         
-12月8号是一个悲催的日子
+12月8号，一个我不愿提起的的日子
 
-该交房租了，哇哇哇哭
+房租，水费，电费，全都围绕着我
 
-此处应该有表情..但是我今天，把我的博客搭建完成了。哈哈哈，房租那都不是个事。。。上午的时候，我把昨天搭建的博客，有看了下，看看有什么问题啥的。就差最后一步就是申请域名。哼，哼，可是2哈没钱啊，有钱也买骨头了呢咋办呢，终于有好人告诉我了个网址，网址就是—-然后我就默默的去申请了域名。然后有了自己的小网址，好激动啊。就这么把域名弄到手了，然后把域名配置了DNS ip，然后就开始了我的
+此处应该有表情..
+
+
+但是我今天，有件非常开心的事情，就是把我的博客搭建好了。哈哈，没有什么事情比这更激动人心的了。想想房租那都不是个事。。。上午的时候，我把昨天搭建遗留的问题，好好的看了下，跟别人搭建的步骤有什么区别。基本修改的都差不多了。然后，就差最后一步，申请域名了。这可不是件好事啊，要花钱，我曹，我堂堂2哈，可没钱。有钱也买骨头吃，嘿嘿！呢咋办呢，然后我
                       
                     </p>
                     
@@ -521,7 +563,7 @@ xml代码123456789101112131415161718192021222324252627282930&lt;RelativeLayout  
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2016/12/07/2ha1/">王鹏程</a></h3>
+                    <h3><a href="/2016/12/07/2ha1/">博主--2哈</a></h3>
                     <span>
                         <span class="post-meta">
       <time datetime="2016-12-07T09:48:22.000Z" itemprop="datePublished">
@@ -530,7 +572,7 @@ xml代码123456789101112131415161718192021222324252627282930&lt;RelativeLayout  
     
     
     | 
-    <a href='/tags/md代码展示/'>md代码展示</a>
+    <a href='/tags/md演示/'>md演示</a>
     
     
 </span>
@@ -540,15 +582,15 @@ xml代码123456789101112131415161718192021222324252627282930&lt;RelativeLayout  
                     <p>
                       
                         
-请加我的微信号：15732157592 
 
-啦啦啦啦啦啦啦啦标题显示：：：
-我叫王鹏程，小名2哈来自2星的哈文字标题显示：：：：
-111111211111122222222222223333333333333444444444444455555555555556666666666666文字链接 文字：：：：
+可以加微信，听你们扯犊子。
 
-2哈的github别看了没什么太多东西
-图片链接 ：：：：
-代码展示 1234567891011121314```public
+
+标题显示：
+我叫王鹏程，小名2哈来自2哈的星文字标题显示：
+111111211111122222222222223333333333333444444444444455555555555556666666666666文字链接 链接可点：我的github没写过什么好的东西，有点可惜
+展示图片链接：
+代码展示 1234567891011121314```public class PaintCanvas e
                       
                     </p>
                     
@@ -596,7 +638,7 @@ xml代码123456789101112131415161718192021222324252627282930&lt;RelativeLayout  
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2016/12/07/2ha/">Hello World -->千古不变的helloworld-_-</a></h3>
+                    <h3><a href="/2016/12/07/2ha/">Hello World</a></h3>
                     <span>
                         <span class="post-meta">
       <time datetime="2016-12-07T02:24:06.798Z" itemprop="datePublished">
@@ -609,8 +651,7 @@ xml代码123456789101112131415161718192021222324252627282930&lt;RelativeLayout  
                 <div class="col-md-8">
                     <p>
                       
-                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new p
+                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.欢迎来 hexo ！这是你第一次提交。检查网址获取更
                       
                     </p>
                     

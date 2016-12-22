@@ -10,7 +10,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: 写作 | 2哈的生活</title>
+  <title>php与mysql之间的勾当 | 2哈的生活</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -93,7 +93,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -125,11 +125,15 @@
         		<a class="sb-toggle-submenu">类别<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/学习/" class="animsition-link">学习<small>(1)</small></a></li>
+				    <li><a href="/categories/Android/" class="animsition-link">Android<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/开发中遇到的问题/" class="animsition-link">开发中遇到的问题<small>(2)</small></a></li>
+				    <li><a href="/categories/HTML/" class="animsition-link">HTML<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(1)</small></a></li>
+				    <li><a href="/categories/PHP/" class="animsition-link">PHP<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(2)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -242,78 +246,66 @@ show_date_time();
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.webp) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>To Be a Happy Person.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>做一个快乐幸福的人。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/12/10/2ha3/">Hexo主题修改</a></h4>
-                            
-                            <p><time datetime="2016-12-10T07:06:03.000Z"><a href="/2016/12/10/2ha3/">2016-12-10</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2016/12/08/2ha2/">笔记1</a></h4>
-                            
-                            <p><time datetime="2016-12-08T07:15:03.000Z"><a href="/2016/12/08/2ha2/">2016-12-08</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-12-15T07:15:03.000Z" itemprop="datePublished">
+          2016-12-15
+      </time>
+    
+    
+    | 
+    <a href='/tags/遇到的问题/'>遇到的问题</a>
+    
+    
+</span>
+                <h1>php与mysql之间的勾当</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="php执行sql语句出错"><a href="#php执行sql语句出错" class="headerlink" title="php执行sql语句出错"></a>php执行sql语句出错</h3><hr>
+<h4 id="出现的问题："><a href="#出现的问题：" class="headerlink" title="出现的问题："></a>出现的问题：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$sql=&quot;select * from table where user = &apos;&quot;.$user.&quot;&apos;&quot;;</div><div class="line">$query=mysqli_query($link,$sql);</div><div class="line">其实在这时$query已经为假了，但是不知道错在哪，感觉sql语句也没错啊。</div><div class="line">while($row=mysqli_fetch_array($query))&#123;</div><div class="line">   $row[&apos;name&apos;];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>一般报  mysqli_fetch_array() ==expects parameter 1 to be mysqli_result==这种错误</p>
+<p>网上搜了一下，终于找到了最好的解决办法：<br>就是在$query后边判断下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> if (!$query) &#123;</div><div class="line"> printf(&quot;Error: %s\n&quot;, mysqli_error($link));</div><div class="line"> exit();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>完美解决，这样就知道错误出现在什么问题上了。</p>
+<hr>
+<p>测试sql语句是否正确。那就把sql语句用php函数echo打印出来，然后用navicat客户端，运行下看输出。例如：</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://chuantu.biz/t5/44/1481869636x1006680610.png" alt="sql语句"></h2><h2 id="php插入mysql数据乱码"><a href="#php插入mysql数据乱码" class="headerlink" title="php插入mysql数据乱码"></a>php插入mysql数据乱码</h2><p>感觉服务器，数据库，网页代码都已经设置为utf-8格式的了。但还是在保存到数据库的时候出现乱码。<br>由于使用的远程数据库，所以不知道具体如何修改。<br>网上搜索解决办法，基本都是设置set names utf8，但是我设置完后根本没有什么卵用。<br>终于上天不负有心人啊，得到了最好的解决办法。<br>就是在连接数据库的时候，读取数据库跟写入数据库的时候，都设置下utf8<br>具体代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$link=mysqli_connect(&apos;localhost&apos;,&apos;root&apos;,&apos;nicai&apos;,&apos;fuck&apos;);</div><div class="line">$link-&gt;query(&quot;set character set &apos;utf8&apos;&quot;);//读库</div><div class="line">$link-&gt;query(&quot;set names &apos;utf8&apos;&quot;);//写库</div></pre></td></tr></table></figure></p>
+<p>完美解决了乱码问题。哈哈</p>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>人生需要不断的探索，加油吧，骚年。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2016/12/13/html1/">
+        清除html缓存 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/12/15/php1/" data-title="php与mysql之间的勾当" data-url="http://yoursite.com/2016/12/15/php1/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 

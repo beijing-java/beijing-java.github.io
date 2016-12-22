@@ -10,7 +10,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>清除html缓存 | 2哈的生活</title>
+  <title>Category: PHP | 2哈的生活</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -93,7 +93,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -125,11 +125,15 @@
         		<a class="sb-toggle-submenu">类别<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/学习/" class="animsition-link">学习<small>(1)</small></a></li>
+				    <li><a href="/categories/Android/" class="animsition-link">Android<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/开发中遇到的问题/" class="animsition-link">开发中遇到的问题<small>(2)</small></a></li>
+				    <li><a href="/categories/HTML/" class="animsition-link">HTML<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(1)</small></a></li>
+				    <li><a href="/categories/PHP/" class="animsition-link">PHP<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/hexo/" class="animsition-link">hexo<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(2)</small></a></li>
 				    
 				</ul>
         	</li>
@@ -242,78 +246,69 @@ show_date_time();
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2016-12-13T09:44:28.000Z" itemprop="datePublished">
-          2016-12-13
-      </time>
-    
-    
-    | 
-    <a href='/tags/html/'>html</a>
-    
-    
-</span>
-                <h1>清除html缓存</h1>
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/back.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>To Be a Happy Person.</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p>做一个快乐幸福的人。</p>
+                        
+
+                    </div>
+                </div>
             </div>
+            <!-- // .col-md-12 -->
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<blockquote>
-<blockquote>
-<p>清除页面缓存</p>
-</blockquote>
-</blockquote>
-<p>前因：<br>近日来，2哈跟着大神开始学习php，也用php写了些例子，一直发现个问题，页面缓存太严重，<br>在服务器端修改完代码之后，不能立即看到效果。肯定是缓存的问题。<br>还有表单输入后的数据，在下一次输入相同数据时还是会显示的。</p>
-<p>法海解决：<br>2哈无奈，只能请来了法海。法海唱到：西湖的美，你的美，为啥缓存总是存在，啊，啊，啊，啊。<br>千年不变啊。。<br><img src="https://s-media-cache-ak0.pinimg.com/236x/ac/bd/c1/acbdc19c61c86f4c712adcee7e3f382d.jpg" alt=""><br>法海说：你可以使用html设置http头信息标签，这是种简单的解决办法</p>
-<ul>
-<li>1 <img src="http://ohuv9cuqr.bkt.clouddn.com/biaoji.png" alt="">用html标签设置http头信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-cache&quot;&gt;</div><div class="line">	&lt;meta http-equiv=&quot;Expires&quot; content=&quot;0&quot;&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>http头信息<em>Expires</em>和<em>Cache-Control</em>。为应用程序服务器提供了一个控制浏览器和代理服务器上缓存的机制。<br>Http头信息Expires告诉代理服务器，它的缓存页面何时将过期。Http规范中新定义的头信息Cache-Control可以通知浏览器不缓存任何页面。<br>当点击后退按钮时，浏览器重新访问服务器已获取页面，<br>  使用Cache-Control的基本方法：</p>
-<pre><code>#no-cache:强制缓存从服务器上获取新的页面
-#no-store:在任何环境下不保存任何页面
-</code></pre><p>而http1.0规范中Pragma:no-cache等同于Cache-Control:no-cache,同样可以包含在头信息中。</p>
-<ul>
-<li>2 <img src="http://ohuv9cuqr.bkt.clouddn.com/biaoji.png" alt="">在需要打开的url后面添加一个随机的参数<br>增加参数前：url=test/test.jsp<br>增加参数后：url=test/test.jsp?ranparam=random()<br>因为每次请求的url后面的参数不一样，相当于请求的是不同的页面，这样虽然麻瓜点，但也是可以清除缓存的。</li>
-<li>3 <img src="http://ohuv9cuqr.bkt.clouddn.com/biaoji.png" alt=""> php清除缓存文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line"> header(&quot;Content-type:text/html;charset=utf-8&quot;);</div><div class="line"> function clearCache($dir)&#123;</div><div class="line">	$file=scandir($dir);</div><div class="line">	foreach($file as $v)&#123;</div><div class="line">		if($v==&apos;clear.php&apos;)&#123;continue;&#125;</div><div class="line">		if(@unlink($v))&#123;</div><div class="line">			echo&quot;成功清除文件:&quot;.$v.&apos;&lt;br/&gt;&apos;;</div><div class="line">		&#125;else&#123;</div><div class="line">			echo&quot;清除文件失败:&quot;.$v.&apos;&lt;br/&gt;&apos;;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line"> </div><div class="line"> &#125;</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>剩下的以后，我好好的总结，先回家了，2哈饿了。。</p>
-
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="pagination" role="pagination">
-    
-    
-    <a class="pull-right" href="/2016/12/12/sport/">
-        你就是下一个宋仲基 →
-    </a>
-    
-</nav>
-
-        <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/12/13/清除html缓存/" data-title="清除html缓存" data-url="http://yoursite.com/2016/12/13/清除html缓存/"></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"duoshuo_name"};
-(function() {
-	var ds = document.createElement('script');
-	ds.type = 'text/javascript';ds.async = true;
-	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	ds.charset = 'UTF-8';
-	(document.getElementsByTagName('head')[0] 
-	 || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
-</script>
-</div>
+        <div class="herofade beige-dk"></div>
     </div>
 </section>
 
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
 
+<!-- ============================ END Hero Image =========================== -->
+
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2016/12/15/php1/">php与mysql之间的勾当</a></h4>
+                            
+                            <p><time datetime="2016-12-15T07:15:03.000Z"><a href="/2016/12/15/php1/">2016-12-15</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</section> 
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>人生需要不断的探索，加油吧，骚年。</p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 
